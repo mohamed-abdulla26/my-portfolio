@@ -4,16 +4,14 @@ const ParallaxBackground = () => {
   const { scrollYProgress } = useScroll();
   const x = useSpring(scrollYProgress, { damping: 50 });
   const mountain3Y = useTransform(x, [0, 0.5], ["0%", "70%"]);
-  const planetsX = useTransform(x, [0, 0.5], ["0%", "-20%"]);
-  const mountain2Y = useTransform(x, [0, 0.5], ["0%", "30%"]);
   const mountain1Y = useTransform(x, [0, 0.5], ["0%", "0%"]);
 
   return (
-    <section className="absolute inset-0 ">
-      <div className="relative h-screen overflow-y-hidden">
+    <div className="absolute inset-0" aria-hidden="true">
+      <div className="relative h-[100svh] overflow-hidden">
         {/* Background Sky */}
         <div
-          className="absolute inset-0 w-full h-screen -z-50"
+          className="absolute inset-0 -z-50 h-[100svh] w-full"
           style={{
             backgroundImage: "url(/assets/bg.png)",
             backgroundPosition: "bottom",
@@ -61,7 +59,7 @@ const ParallaxBackground = () => {
           }}
         />
       </div>
-    </section>
+    </div>
   );
 };
 

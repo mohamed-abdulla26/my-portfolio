@@ -9,15 +9,16 @@ const About = () => {
   return (
     <section className="c-space section-spacing scroll-mt-16" id="about">
       <h2 className="text-heading">About Me</h2>
-      <div className="grid grid-cols-1 gap-4 md:grid-cols-6 md:auto-rows-[18rem] mt-12">
+      <div className="mt-8 grid grid-cols-1 gap-4 sm:mt-12 md:auto-rows-[18rem] md:grid-cols-6">
         {/* Grid 1 */}
         <div className="flex items-end grid-default-color grid-1">
           <img
             src="assets/coding-pov.png"
-            className="absolute scale-[1.75] -right-[5rem] -top-[1rem] md:scale-[3] md:left-50 md:inset-y-10 lg:scale-[2.5]"
+            className="absolute -right-16 -top-2 w-[28rem] max-w-none scale-110 opacity-80 sm:-right-20 sm:w-[34rem] md:inset-y-10 md:left-50 md:w-auto md:scale-[3] lg:scale-[2.5]"
+            alt="Developer workspace"
           />
           <div className="z-10">
-            <p className="headtext">Hi, I'm Mohamed Abdulla</p>
+            <p className="headtext">Hi, I&apos;m Mohamed Abdulla</p>
             <p className="subtext">
               Over the last year, I have developed my frontend and backend
               development skills, building dynamic web applications and
@@ -33,7 +34,7 @@ const About = () => {
             ref={grid2Container}
             className="flex items-center justify-center w-full h-full"
           >
-            <p className="flex items-end text-5xl text-gray-500">
+            <p className="flex items-end text-3xl text-gray-500 sm:text-5xl">
               CODE IS CRAFT
             </p>
             <Card
@@ -80,13 +81,13 @@ const About = () => {
         </div>
         {/* Grid 3 */}
         <div className="grid-black-color grid-3">
-          <div className="z-10 w-[50%]">
+          <div className="relative z-10 w-[58%] sm:w-1/2">
             <p className="headtext">Time Zone</p>
             <p className="subtext">Powered by coffee, available worldwide
                {/* I'm based in Mars, and open to remote work worldwide */}
             </p>
           </div>
-          <figure className="absolute left-[30%] top-[10%]">
+          <figure className="absolute left-[24%] top-[18%] w-[23rem] sm:left-[30%] sm:top-[10%]">
             <Globe />
           </figure>
         </div>
@@ -101,14 +102,14 @@ const About = () => {
         </div>
         {/* Grid 5 */}
         <div className="grid-default-color grid-5">
-          <div className="z-10 w-[50%]">
-            <p className="headText">Teck Stack</p>
+          <div className="relative z-10 w-full sm:w-[50%]">
+            <p className="headtext">Tech Stack</p>
             <p className="subtext">
-              I specialize in a variety of languages, frameworks, and tools taht
+              I specialize in a variety of languages, frameworks, and tools that
               allow me to build robust and scalable applications
             </p>
           </div>
-          <div className="absolute inset-y-0 md:inset-y-9 w-full h-full start-[50%] md:scale-125">
+          <div className="absolute -bottom-12 left-0 h-[17rem] w-full scale-75 sm:inset-y-0 sm:left-[50%] sm:h-full sm:scale-100 md:inset-y-9 md:scale-125">
             <Frameworks />
           </div>
         </div>

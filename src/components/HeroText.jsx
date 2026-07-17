@@ -8,9 +8,9 @@ const HeroText = () => {
     visible: { opacity: 1, x: 0 },
   };
   return (
-    <div className="z-10 mt-20 text-center md:mt-40 md:text-left rounded-3xl bg-clip-text">
+    <div className="z-10 mt-28 w-full max-w-full rounded-3xl bg-clip-text text-center sm:mt-32 md:mt-40 md:text-left">
       {/* Desktop View */}
-      <div className="flex-col hidden md:flex c-space">
+      <div className="hidden flex-col md:flex">
         <motion.h1
           className="text-4xl font-medium"
           variants={variants}
@@ -18,7 +18,7 @@ const HeroText = () => {
           animate="visible"
           transition={{ delay: 1 }}
         >
-          Hi I'm Abu
+          Hi I&apos;m Abu
         </motion.h1>
         <div className="flex flex-col items-start">
           <motion.p
@@ -53,19 +53,19 @@ const HeroText = () => {
         </div>
       </div>
       {/* Mobile View */}
-      <div className="flex- flex-col space-y-6 md:hidden">
+      <div className="mx-auto flex max-w-lg flex-col space-y-5 px-1 md:hidden">
         <motion.p
-          className="text-4xl font-medium"
+          className="text-2xl font-medium sm:text-3xl"
           variants={variants}
           initial="hidden"
           animate="visible"
           transition={{ delay: 1 }}
         >
-          Hi,I'm Abu
+          Hi, I&apos;m Abu
         </motion.p>
         <div>
           <motion.p
-            className="text-5xl font-black text-neutral-300"
+            className="text-3xl font-black text-neutral-300 min-[380px]:text-4xl sm:text-5xl"
             variants={variants}
             initial="hidden"
             animate="visible"
@@ -81,11 +81,11 @@ const HeroText = () => {
           >
             <FlipWords
               words={words}
-              className="font-bold text-white text-7xl"
+              className="max-w-full text-[clamp(2.75rem,15vw,5rem)] font-bold leading-tight text-white"
             />
           </motion.div>
           <motion.p
-            className="text-4xl font-black text-neutral300"
+            className="mt-2 text-3xl font-black leading-tight text-neutral-300 min-[380px]:text-4xl sm:text-5xl"
             variants={variants}
             initial="hidden"
             animate="visible"

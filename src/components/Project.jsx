@@ -14,13 +14,13 @@ const Project = ({
   return (
     <>
       <div
-        className="flex-wrap items-center justify-between py-10 space-y-14 sm:flex sm:space-y-0"
+        className="flex flex-col items-start justify-between gap-6 py-8 sm:flex-row sm:items-center sm:gap-8 sm:py-10"
         onMouseEnter={() => setPreview(image)}
         onMouseLeave={() => setPreview(null)}
       >
-        <div>
-          <p className="text-2xl">{title}</p>
-          <div className="flex gap-5 mt-2 text-sand">
+        <div className="min-w-0">
+          <p className="text-xl sm:text-2xl">{title}</p>
+          <div className="mt-3 flex flex-wrap gap-x-4 gap-y-2 text-sm text-sand sm:text-base">
             {tags.map((tag) => (
               <span key={tag.id}>{tag.name}</span>
             ))}
@@ -28,10 +28,11 @@ const Project = ({
         </div>
         <button
           onClick={() => setIsHidden(true)}
-          className="flex items-center gap-1 cursor-pointer hover-animation"
+          className="flex min-h-11 items-center gap-2 rounded-lg pr-3 font-medium text-neutral-200 hover-animation"
+          aria-label={`Read more about ${title}`}
         >
           Read More
-          <img src="assets/arrow-right.svg" className="w-5" />
+          <img src="assets/arrow-right.svg" className="w-5" alt="" />
         </button>
       </div>
       <div className="bg-gradient-to-r from-transparent via-neutral-700 to-transparent h-[1px] w-full" />

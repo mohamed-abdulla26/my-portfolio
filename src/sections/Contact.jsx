@@ -53,7 +53,7 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="relative flex scroll-mt-16 items-center c-space section-spacing"
+      className="relative flex min-h-[80svh] scroll-mt-16 items-center py-16 c-space md:min-h-screen md:py-20"
     >
       <Particles
         className="absolute inset-0 -z-50"
@@ -63,17 +63,17 @@ const Contact = () => {
         refresh
       />
       {showAlert && <Alert type={alertType} text={alertMessage} />}
-      <div className="flex flex-col items-center justify-center max-w-md p-5 mx-auto border border-white/10 rounded-2xl bg-primary">
-        <div className="flex flex-col items-start w-full gap-5 mb-10">
-          <h2 className="text-heading">Let's Talk</h2>
-          <p className="font-normal text-neutral-400">
-            Whether you're loking to build a new website, improve your existing
-            platform, or bring a unique project to life, I'm here to help
+      <div className="mx-auto flex w-full max-w-md flex-col items-center justify-center rounded-2xl border border-white/10 bg-primary/90 p-5 sm:p-7">
+        <div className="mb-8 flex w-full flex-col items-start gap-4 sm:mb-10 sm:gap-5">
+          <h2 className="text-heading">Let&apos;s Talk</h2>
+          <p className="text-sm font-normal leading-relaxed text-neutral-400 sm:text-base">
+            Whether you&apos;re looking to build a new website, improve your existing
+            platform, or bring a unique project to life, I&apos;m here to help
           </p>
         </div>
         <form className="w-full" onSubmit={handleSubmit}>
           <div className="mb-5">
-            <label htmlFor="name" className="feild-label">
+            <label htmlFor="name" className="field-label">
               Full Name
             </label>
             <input
@@ -89,7 +89,7 @@ const Contact = () => {
             />
           </div>
           <div className="mb-5">
-            <label htmlFor="email" className="feild-label">
+            <label htmlFor="email" className="field-label">
               Email
             </label>
             <input
@@ -105,13 +105,12 @@ const Contact = () => {
             />
           </div>
           <div className="mb-5">
-            <label htmlFor="message" className="feild-label">
+            <label htmlFor="message" className="field-label">
               Message
             </label>
             <textarea
               id="message"
               name="message"
-              type="text"
               rows="4"
               className="field-input field-input-focus"
               placeholder="Share your thoughts..."
@@ -123,7 +122,8 @@ const Contact = () => {
           </div>
           <button
             type="submit"
-            className="w-full px-1 py-3 text-lg text-center rounded-md cursor-pointer bg-radial from-lavender to-royal hover-animation"
+            disabled={isLoading}
+            className="min-h-12 w-full cursor-pointer rounded-md bg-radial from-lavender to-royal px-1 py-3 text-center text-lg hover-animation disabled:cursor-wait disabled:opacity-70"
           >
             {!isLoading ? "Send" : "Sending..."}
           </button>

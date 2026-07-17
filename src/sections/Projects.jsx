@@ -19,13 +19,13 @@ const Projects = () => {
       className="relative c-space mt-20 scroll-mt-16 md:mt-30"
     >
       <h2 className="text-heading">My Selected Projects</h2>
-      <div className="bg-gradient-to-r from-transparent via-neutral-700 to-transparent mt-12 h-[1px] w-full" />
+      <div className="mt-8 h-px w-full bg-gradient-to-r from-transparent via-neutral-700 to-transparent sm:mt-12" />
       {myProjects.map((project) => (
         <Project key={project.id} {...project} setPreview={setPreview} />
       ))}
       {preview && (
         <motion.img
-          className="fixed top-0 left-0 z-50 object-cover h-56 rounded-lg shadow-lg pointer-events-none w-80"
+          className="pointer-events-none fixed left-0 top-0 z-50 hidden h-56 w-80 rounded-lg object-cover shadow-lg lg:block"
           src={preview}
           style={{ x: springX, y: springY }}
         />

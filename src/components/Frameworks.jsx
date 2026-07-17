@@ -28,13 +28,13 @@ export function Frameworks() {
   ];
   return (
     <div className="relative flex h-[15rem] w-full flex-col items-center justify-center">
-      <OrbitingCircles iconSize={40}>
+      <OrbitingCircles iconSize={36} radius={125}>
         {skills.map((skill, index) => (
           <Icon key={index} src={`assets/logos/${skill}`} />
         ))}
       </OrbitingCircles>
-      <OrbitingCircles iconSize={25} radius={100} reverse speed={2}>
-        {skills.reverse().map((skill, index) => (
+      <OrbitingCircles iconSize={24} radius={80} reverse speed={2}>
+        {[...skills].reverse().map((skill, index) => (
           <Icon key={index} src={`assets/logos/${skill}`} />
         ))}
       </OrbitingCircles>
@@ -43,5 +43,5 @@ export function Frameworks() {
 }
 
 const Icon = ({ src }) => (
-  <img src={src} className="duration-200 rounded-sm hover:scale-110" />
+  <img src={src} className="rounded-sm duration-200 hover:scale-110" alt="" />
 );
